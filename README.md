@@ -3,6 +3,8 @@
 A simple, self-contained, and offline-first student dashboard designed to help organize course materials, assignments, and important links without needing an internet connection. The entire application is packed into a single HTML file for maximum portability.
 
 The core idea is to provide a central hub for all your local study files and folders, removing the distraction of the internet while studying.
+#
+<img width="1245" height="830" alt="image" src="https://github.com/user-attachments/assets/219d79ae-5ac4-4735-82a4-e3a11c6a679b" />
 
 ## Features
 
@@ -100,6 +102,7 @@ Mohamad Malek Albeik
   <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-333333?style=for-the-badge&logo=github&logoColor=white"/>
 </a>
 </p>
+
 
 
 *This project was built with passion and continuous learning.*
