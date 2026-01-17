@@ -40,9 +40,9 @@ To get the most out of the dashboard, it's recommended to organize your files us
 3.  Create an `essentials` folder for other resources.
 4.  Place your profile picture (e.g., `student-photo.jpg`) in the same directory as the dashboard.
 
-## How to Customize
+## ⚙️ How to Customize
 
-This dashboard is designed to be easily customized by editing the HTML file. Open `dashboard.html` in a text editor (like VS Code, Notepad++, or Sublime Text) and look for the comments marked `<!-- EDITABLE: ... -->`.
+This dashboard is designed to be easily customized by editing the `dashboard.html` file. Open it in a text editor (like VS Code, Notepad++, or Sublime Text) and look for the comments marked `<!-- EDITABLE: ... -->`.
 
 ### 1. Profile Information
 
@@ -72,28 +72,34 @@ In the `<header>` section, change `[Your Program Name]` to your actual course ti
     *   Find the `div` with the class `quick-links-grid`.
     *   Update the `href` attribute for each link. These can be web links (like `https://google.com`) or local file links (`file:///C:/path/to/file.pdf`).
 
-## How to Use
+## 🚀 How to Use
 
 1.  Double-click the `dashboard.html` file to open it in your preferred web browser (Chrome, Firefox, Edge, etc.).
 2.  All data, such as your assignments and notes, is saved in your browser's `localStorage`. This means it stays on your computer and is not sent anywhere.
 3.  When clicking on links to local folders, it's often best to **right-click** and select **"Open in New Tab"** so you don't navigate away from the dashboard.
 
-## Technology
+## 💻 Technology
 
-This project is built with:
-*   **HTML5**
-*   **CSS3**
-*   **Vanilla JavaScript (ES6+)**
+This project is built with pure, simple web technologies—no frameworks, no libraries, no dependencies.
 
-No frameworks, no libraries, no dependencies. Just pure, simple web technologies.
+<p>
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+</p>
 
 ## 📞 Contact
 
 Mohamad Malek Albeik
 
-- **LinkedIn:** linkedin.com/in/mohamad-malek-albeik
-- **Website:** mohamad-albeik.github.io/portfolio-website-main/
+<p>
+<a href="https://linkedin.com/in/mohamad-malek-albeik" target="_blank">
+  <img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+<a href="https://mohamad-albeik.github.io/portfolio-website-main/" target="_blank">
+  <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-333333?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+</p>
 
----
 
 *This project was built with passion and continuous learning.*
