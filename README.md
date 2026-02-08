@@ -1,88 +1,131 @@
-# Offline Student Dashboard
 
-A simple, self-contained, and offline-first student dashboard designed to help organize course materials, assignments, and important links without needing an internet connection. The entire application is packed into a single HTML file for maximum portability.
+# Student Portal Dashboard (Offline-First)
+![Project Status](https://img.shields.io/badge/status-active-success.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-The core idea is to provide a central hub for all your local study files and folders, removing the distraction of the internet while studying.
-#
+A simple, self-contained, **offline-first** student dashboard designed to organize course materials, assignments, notes, and important links **without needing an internet connection**. The entire app lives inside a single HTML file for maximum portability.
+
+The core idea: a central hub for your **local** study files and folders so you can study without the internet shaped temptation vortex.
+
+> Current UI version: **Beta 1.1** (shown in the header inside `dashboard.html`).
+
 <img width="1245" height="830" alt="image" src="https://github.com/user-attachments/assets/219d79ae-5ac4-4735-82a4-e3a11c6a679b" />
 
 ## Features
 
-*   **Zero Installation:** Just open the `dashboard.html` file in any modern web browser.
-*   **Fully Offline:** Designed to work without an internet connection. (Note: Google Fonts are fetched on first load but are typically cached by the browser for future offline use).
-*   **Local File Linking:** Easily link to local folders for each course module and resource.
-*   **Task Management:** An integrated "Assignments" widget to keep track of your to-do list, with items saved locally in your browser.
-*   **Quick Notes:** A persistent "Quick Notes" area for jotting down reminders.
-*   **Customizable:** Easily edit student information, course details, and links directly in the HTML file.
-*   **Dynamic Stats:** At-a-glance view of total modules, semester progress, and pending tasks.
-*   **Favorites System:** Pin your most important modules to a dedicated "Favorites" section.
-*   **Keyboard Shortcuts:** Press `/` to search and `ESC` to clear.
+- **Zero Installation:** Open `dashboard.html` in any modern browser.
+- **Fully Offline-Friendly:** Uses a system font stack (no remote font downloads).
+- **Local File Linking:** Link each module card to local folders.
+- **Search + Keyboard Shortcuts:** Press `/` to focus search, `ESC` to clear (and close the modal).
+- **Favorites System:** Star modules to pin them into a dedicated **⭐ Favorite Modules** section.
+- **Quick Stats:** Total core modules, semester progress %, favorites count, and pending tasks.
+- **Assignments Widget:**
+  - Add tasks with optional due date and priority.
+  - Auto-highlights **due-soon/urgent** based on due date proximity.
+  - “Clean Up” removes completed items.
+- **Quick Notes:** Persistent notes saved automatically.
+- **Pomodoro Timer:** Built-in 25/5 timer with start/pause/reset.
+- **Data Portability (Export / Import):**
+  - Export your favorites, tasks, notes, theme, and tip preference into a JSON file.
+  - Import the JSON later to restore your setup.
+- **Theme Toggle:** Light/Dark mode toggle (saved in your browser).
+- **Dismissable Tip:** “Navigation Tip” can be dismissed and won’t return unless you clear storage.
 
 ## Project Setup & Folder Structure
 
-To get the most out of the dashboard, it's recommended to organize your files using the following structure.
+Recommended structure (but not mandatory):
 
 ```
 /your-main-course-folder/
-├── dashboard.html         <-- The main file you open
-├── student-photo.jpg        <-- Your profile picture
+├── dashboard.html            <-- The main file you open
+├── student-photo.jpg         <-- Your profile picture
 │
-├── modules/                 <-- Folder for your core course modules
+├── modules/                  <-- Folder for your core course modules
 │   ├── module-1/
 │   ├── module-2/
 │   └── ...
 │
-└── essentials/              <-- Folder for general resources
+└── essentials/               <-- Folder for general resources
     ├── study-skills/
     └── research-skills/
 ```
 
-1.  Place the `dashboard.html` file in your main course directory.
-2.  Create a `modules` folder to hold a sub-folder for each course module.
-3.  Create an `essentials` folder for other resources.
-4.  Place your profile picture (e.g., `student-photo.jpg`) in the same directory as the dashboard.
+1. Put `dashboard.html` in your main course directory.
+2. Create a `modules` folder and a sub-folder for each module.
+3. Create an `essentials` folder for general resources.
+4. Put your profile picture (e.g., `student-photo.jpg`) next to `dashboard.html`.
 
 ## ⚙️ How to Customize
 
-This dashboard is designed to be easily customized by editing the `dashboard.html` file. Open it in a text editor (like VS Code, Notepad++, or Sublime Text) and look for the comments marked `<!-- EDITABLE: ... -->`.
+Open `dashboard.html` in a text editor (VS Code, Notepad++, etc.) and look for comments marked:
 
-### 1. Profile Information
+`<!-- EDITABLE: ... -->`
 
-*   **Photo:** Find the `<img class="profile-photo">` tag and change `src="student-photo.jpg"` to your image file's name.
-*   **Name, ID, Email:** Find the profile card section and replace the `[Student Name]`, `[Student ID]`, and `[student.id]@institution.edu` placeholders.
+### 1) Profile Information
 
-### 2. Semester Dates
+- **Photo:** Update `src="student-photo.jpg"` on the `<img class="profile-photo">`.
+- **Name / ID / Email:** Replace placeholders in the profile card.
 
-The "Semester Progress" bar is calculated automatically based on two dates in the profile card:
-*   **Date Joined:** This is the start date of your semester.
-*   **End Date:** This is the end date of your semester.
+### 2) Semester Dates (Progress %)
 
-Update these values (e.g., `2025-09-01`) to match your academic calendar.
+Semester progress uses the **machine-readable** dates on these elements:
 
-### 3. Program Name
+- `id="startDateValue"` with `data-date="YYYY-MM-DD"`
+- `id="endDateValue"` with `data-date="YYYY-MM-DD"`
 
-In the `<header>` section, change `[Your Program Name]` to your actual course title.
+Update those values to match your semester.
 
-### 4. Modules and Links
+### 3) Program Name
 
-*   **Core Modules & Student Essentials:**
-    *   Find the `div` with the ID `core-modules-grid`.
-    *   Edit the `href` attribute on each `<a>` tag to point to the correct local folder (e.g., `href="./modules/your-module-folder-name/"`).
-    *   Change the "Module Name" and "Module Subtitle" text.
-    *   You can copy and paste these `<a>` blocks to add or remove modules.
-*   **Quick Links:**
-    *   Find the `div` with the class `quick-links-grid`.
-    *   Update the `href` attribute for each link. These can be web links (like `https://google.com`) or local file links (`file:///C:/path/to/file.pdf`).
+In the `<header>`, replace `[Your Program Name]`.
+
+### 4) Modules and Links
+
+- **Core Modules**
+  - Edit cards inside `#core-modules-grid`
+  - Set `href` to a local folder (example: `./modules/your-module-folder/`)
+  - Update the title/subtitle text and icon
+- **Student Essentials**
+  - Edit the cards under the “Student Essentials” section
+- **Quick Links**
+  - Edit links in `.quick-links-grid`
+  - These can be web URLs or local file links (e.g., `file:///C:/path/to/file.pdf`)
+
+## 🤖 AI Customization Prompts
+
+This project includes three AI prompts located in the `/prompts/` folder to help customize the HTML file using an AI agent.
+
+- **PROMPT_STUDENT_INFO.md** – update personal and semester information  
+- **PROMPT_QUICK_LINKS.md** – update dashboard shortcuts  
+- **PROMPT_FILES.md** – update local module and file links  
+
+Use only one prompt at a time, depending on what you want to change.
+
 
 ## 🚀 How to Use
 
-1.  Double-click the `dashboard.html` file to open it in your preferred web browser (Chrome, Firefox, Edge, etc.).
-2.  All data, such as your assignments and notes, is saved in your browser's `localStorage`. This means it stays on your computer and is not sent anywhere.
-3.  When clicking on links to local folders, it's often best to **right-click** and select **"Open in New Tab"** so you don't navigate away from the dashboard.
+1. Double-click `dashboard.html` to open it.
+2. **All data is stored locally** in your browser’s `localStorage` (nothing is uploaded anywhere).
+3. When opening local folders, it’s often best to **right-click → “Open in New Tab”** so you don’t navigate away from the dashboard.
+4. Use the footer buttons:
+   - **Export Data** → saves a JSON backup (defaults to `student-portal-data.json`)
+   - **Import Data** → restores from a previously exported JSON
+
+## 🔐 Local Storage Keys (for the curious)
+
+The dashboard stores data under these keys:
+
+- `portal_favorites`
+- `portal_assignments`
+- `portal_notes`
+- `portal_theme`
+- `tipDismissed`
+
+Clearing site data/storage in your browser will reset the dashboard.
 
 ## 💻 Technology
 
-This project is built with pure, simple web technologies—no frameworks, no libraries, no dependencies.
+Pure, simple web tech—no frameworks, no build step, no dependencies.
 
 <p>
   <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -103,6 +146,4 @@ Mohamad Malek Albeik
 </a>
 </p>
 
-
-
-*This project was built with passion and continuous learning.*
+*Built with passion and continuous learning.*
