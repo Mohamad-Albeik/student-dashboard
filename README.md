@@ -7,7 +7,7 @@ A simple, self-contained, **offline-first** student dashboard designed to organi
 
 The core idea: a central hub for your **local** study files and folders so you can study without the internet shaped temptation vortex.
 
-> Current UI version: **Beta 1.1** (shown in the header inside `dashboard.html`).
+> Current UI version: **Beta 1.4** (shown in the header inside `dashboard.html`).
 
 <img width="1081" height="1091" alt="Screenshot 2026-02-08 020314" src="https://github.com/user-attachments/assets/3d4f63d5-9841-4eb3-9032-fb94d53cf846" />
 
