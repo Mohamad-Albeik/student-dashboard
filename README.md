@@ -9,7 +9,8 @@ The core idea: a central hub for your **local** study files and folders so you c
 
 > Current UI version: **Beta 1.1** (shown in the header inside `dashboard.html`).
 
-<img width="1245" height="830" alt="image" src="https://github.com/user-attachments/assets/219d79ae-5ac4-4735-82a4-e3a11c6a679b" />
+<img width="1081" height="1091" alt="Screenshot 2026-02-08 020314" src="https://github.com/user-attachments/assets/3d4f63d5-9841-4eb3-9032-fb94d53cf846" />
+
 
 ## Features
 
