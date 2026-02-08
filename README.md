@@ -32,29 +32,38 @@ The core idea: a central hub for your **local** study files and folders so you c
 - **Theme Toggle:** Light/Dark mode toggle (saved in your browser).
 - **Dismissable Tip:** “Navigation Tip” can be dismissed and won’t return unless you clear storage.
 
-## Project Setup & Folder Structure
+Project Setup & Folder Structure
 
-Recommended structure (but not mandatory):
+Recommended structure (flexible, but strongly suggested):
 
 ```
 /your-main-course-folder/
-├── dashboard.html            <-- The main file you open
+├── dashboard.html            <-- Main dashboard file (open this)
 ├── student-photo.jpg         <-- Your profile picture
 │
-├── modules/                  <-- Folder for your core course modules
+├── prompt/                   <-- Text-based prompt & link reference files
+│   ├── moodle.txt
+│   ├── student-email.txt
+│   ├── library.txt
+│   └── ...
+│
+├── modules/                  <-- Core course modules
 │   ├── module-1/
 │   ├── module-2/
 │   └── ...
 │
-└── essentials/               <-- Folder for general resources
+└── essentials/               <-- General student resources
     ├── study-skills/
-    └── research-skills/
+    ├── research-skills/
+    └── career-skills/
 ```
 
-1. Put `dashboard.html` in your main course directory.
-2. Create a `modules` folder and a sub-folder for each module.
-3. Create an `essentials` folder for general resources.
-4. Put your profile picture (e.g., `student-photo.jpg`) next to `dashboard.html`.
+Setup notes
+
+1. Put dashboard.html in your main course directory.
+2. Create a modules folder and a sub-folder for each module.
+3. Create an essentials folder for general resources.
+4. Put your profile picture (e.g., student-photo.jpg) next to dashboard.html.
 
 ## ⚙️ How to Customize
 
